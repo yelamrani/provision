@@ -8,7 +8,7 @@
       "version": "8",
       "iso_checksum_type": "sha256",
       "iso_urls": "http://ftp.belnet.be/mirror/ftp.centos.org/8-stream/isos/x86_64/CentOS-Stream-8-x86_64-latest-boot.iso",
-      "iso_checksum": "68cf936da4dcc099aa8e10b186198bbd9da049a2cac0f9bff3a005d82685b457",
+      "iso_checksum": "b76e32564f49fd182ce712deccd90056d9e4abee9752208fe22a5b4feb2db3b2",
       "headless": "true",
       "config_file": "centos8-kickstart.cfg",
       "ssh_username": "root",
@@ -21,7 +21,7 @@
       "type": "qemu",
       "format": "qcow2",
       "accelerator": "kvm",
-      "qemu_binary": "/usr/bin/qemu-system-x86_64",
+      "qemu_binary": "/usr/libexec/qemu-kvm",
       "net_device": "virtio-net",
       "disk_interface": "virtio",
       "disk_cache": "none",
@@ -61,12 +61,5 @@
     }
   ],
   "post-processors": [
-    {
-        "type": "shell-local",
-        "script": "scripts/push-image.sh",
-        "environment_vars": ["IMAGE_NAME={{user `name`}}",
-                             "IMAGE_VERSION={{user `version`}}",
-                             "DESTINATION_SERVER={{user `destination_server`}}"]
-    }
   ]
 }
