@@ -1,0 +1,1 @@
+echo zerodisk >> /etc/motd

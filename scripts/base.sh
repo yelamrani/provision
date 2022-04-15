@@ -1,0 +1,1 @@
+echo base >> /etc/motd
